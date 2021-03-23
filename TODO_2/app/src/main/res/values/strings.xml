@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">scrollView</string>
+    <string name="royal_university_of_bhutan">Royal university of bhutan</string>
+    <string name="gyalpozhing_college_of_information_technology">Gyalpozhing college of information Technology</string>
+    <string name="phurpa">Papermaking is one of the inventions of the Chinese.
+        The year 105 A.D. is often cited as the one in which papermaking was invented.
+        Historical records show that it was the year during which the invention of paper
+        was reported to the Eastern Han Emperor Hodi by Tsai Lun, an official attached to
+        the Imperial Court during the Han dynasty. It was Tsai Lun who used broken barks
+        of a mulberry tree as fibres and pounded them into a sheet. Later it was discovered
+        that the quality of paper could be much improved with the addition of rags, hemp and
+        old fish nets to the pulp. The paper was soon widely used in China and spread to the
+        rest of the world through the Silk Road. When we have complex layout with more views(Buttons, TextViews or any other view) then we must enclose them inside another standard layout like Table Layout, Relative Layout or Linear Layout. We can specify layout_width and layout_height to adjust the width and height of screen. We can specify height and width in dp(density pixel) or px(pixel). After enclosing those views  in a standard layout, enclose the whole layout in ScrollView to make all the element or views scrollable.
+
+    </string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TO_DO 4</string>
+    <string name="reply_head">Reply Recieved</string>
+    <string name="reply_message">Enter Your Text Here</string>
+    <string name="head_sender">Reply Recieved</string>
+    <string name="sender_message">Enter Your Text Here</string>
+</resources>
