@@ -1,4 +1,4 @@
-package gcit.edu.bt.to_do6;
+package gcit.edu.bt.to_do7;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-    public static final String EXTRA_REPLY = "gcit.edu.bt.to_do6.REPLY";
+    public static final String EXTRA_REPLY = "gcit.edu.bt.to_do7.REPLY";
     private EditText editText2;
 
     @Override

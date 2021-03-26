@@ -1,4 +1,4 @@
-package gcit.edu.bt.to_do6;
+package gcit.edu.bt.to_do7;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-    public static final String EXTRA_MESSAGE = "gcit.edu.bt.to_do6.MESSAGE";
+    public static final String EXTRA_MESSAGE = "gcit.edu.bt.to_do7.MESSAGE";
     public static final int TEXT_REQUEST = 1;
 
     TextView textView;
