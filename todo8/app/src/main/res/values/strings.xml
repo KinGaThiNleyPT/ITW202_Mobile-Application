@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">todo8</string>
+    <string name="open_website">open website</string>
+    <string name="name">open location</string>
+    <string name="enter_your_location_name">Enter your location Name</string>
+    <string name="open_location">Open location</string>
+    <string name="share_this_text">Share this text</string>
+    <string name="enter_website_name">Enter website Name</string>
+    <string name="share_text_to">Share text to</string>
+
+</resources>
