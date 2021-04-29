@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TODO_9</string>
+    <string name="value">Enter number</string>
+    <string name="button">Button</string>
+    <string name="add">Add</string>
+    <string name="value2">Enter number</string>
+    <string name="subtract">Subtract</string>
+    <string name="multiply">Multiply</string>
+    <string name="division">Division</string>
+    <string name="addition">addition</string>
+</resources>
