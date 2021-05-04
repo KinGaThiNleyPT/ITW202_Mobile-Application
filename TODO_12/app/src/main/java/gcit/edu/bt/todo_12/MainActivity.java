@@ -3,6 +3,7 @@ package gcit.edu.bt.todo_12;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -25,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
-                intent.putExtra(EXTRA_MESSAGE, OrderMessage);
-                startActivity(intent);
+                String phone = "";
+                Uri uri = Uri.parse("tel:"+ phone);
+                Intent Sentintent = new Intent(Intent.ACTION_VIEW,uri);
+                if(Sentintent.resolveActivity(getPackageManager())!=null){
+                    startActivity(Sentintent);
+                }
             }
         });
     }
@@ -49,4 +53,5 @@ public class MainActivity extends AppCompatActivity {
         OrderMessage = getString(R.string.froyo_order_message);
         displayToast(OrderMessage);
     }
+
 }
