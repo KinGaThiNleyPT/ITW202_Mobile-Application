@@ -2,14 +2,14 @@ package gcit.edu.bt.todo_12;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -20,40 +20,34 @@ public class MainActivity extends AppCompatActivity {
 
     private String OrderMessage;
 
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_order:
+                Intent intent = new Intent(getApplicationContext(),OrderActivity.class);
+                intent.putExtra(EXTRA_MESSAGE,OrderMessage);
+                startActivity(intent);
+                return true;
+            case R.id.action_status:
+                displayToast("You Selected Status");
+                return true;
+            case R.id.action_favourite:
+                displayToast("You Selected Favourite");
+                return true;
+            case R.id.action_contact:
+                displayToast("You Selected Contact");
+                return true;
+            case R.id.action_search:
+                displayToast("You Selected search");
+                return true;
+        }
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_order:
-                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
-                intent.putExtra(EXTRA_MESSAGE, OrderMessage);
-                startActivity(intent);
-                return true;
-            case R.id.action_status:
-                OrderMessage = getString(R.string.order_message);
-                displayToast("you select status");
-                return true;
-
-            case R.id.action_favourite:
-                OrderMessage = getString(R.string.status_message);
-                displayToast(OrderMessage);
-                return true;
-
-            case R.id.action_contact:
-                OrderMessage = getString(R.string.favourite_message);
-                displayToast(OrderMessage);
-                return true;
-
-            case R.id.action_search:
-                OrderMessage = getString(R.string.search_message);
-                displayToast(OrderMessage);
-                return true;
-        }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -62,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar =findViewById(R.id.toolbar);
+        Toolbar toolbar =findViewById(R.id.toolbar_action);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
