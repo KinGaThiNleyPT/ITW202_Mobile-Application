@@ -10,26 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder> {
     private ArrayList<Sport> mSportsData;
     private Context mContext;
 
-    SportsAdapter(Context context, ArrayList<Sport> sportsData) {
+    SportsAdapter(Context context, ArrayList<Sport> sportsData){
         this.mSportsData = sportsData;
         this.mContext = context;
     }
-
-
     @NonNull
     @Override
-    public SportsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list, parent, false));
+    public SportsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SportsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(SportsAdapter.ViewHolder holder, int position) {
         //Get current sport
         Sport currentSport = mSportsData.get(position);
         //Populate the textviews with data
@@ -39,25 +39,26 @@ class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return mSportsData.size();
-
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, info,news;
-        public ImageView mSportsImage;
-        public SportsAdapter sportsAdapter;
-        public ViewHolder(@NonNull View itemView ) {
-            super(itemView);
-            mSportsImage = (ImageView) itemView.findViewById(R.id.sportsImage);
-            title =(TextView)itemView.findViewById(R.id.text1);
-            info =(TextView)itemView.findViewById(R.id.text2);
-            news =(TextView)itemView.findViewById(R.id.text3);
-        }
+    class ViewHolder extends RecyclerView.ViewHolder {
+        //Members Variables for the TextViews
+        private TextView mTitleText;
+        private TextView mInfoText;
+        private ImageView mSportsImage;
 
-        public void bindTo(Sport currentSport) {
-            //Populate the textviews with data
-            title.setText(currentSport.getTitle());
-            info.setText(currentSport.getInfo());
+        ViewHolder(View itemView){
+            super(itemView);
+
+            //Initialize the views
+            mTitleText = (TextView)itemView.findViewById(R.id.title);
+            mInfoText = (TextView)itemView.findViewById(R.id.sub_title);
+            mSportsImage = (ImageView)itemView.findViewById(R.id.sportsImage);
+        }
+        void bindTo(Sport currentSport){
+            mTitleText.setText(currentSport.getTitle());
+            mInfoText.setText(currentSport.getInfo());
+            Glide.with(mContext).load(currentSport.getImageResource()).into(mSportsImage);
         }
     }
 }
